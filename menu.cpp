@@ -1,7 +1,7 @@
 #include "menu.hpp"
 #include "rwFunc.hpp"
 #include <iostream>
-#include <limits>
+#include <iomanip>
 
 #ifdef _WIN32
 inline void clear()
@@ -65,24 +65,25 @@ void show_file(const Films structures[], int len)
             max_length_purchasing = std::to_string(structures[i].year_purchasing).length();
     }
     horizontal_length = max_length_id + max_length_title + max_length_studio + max_length_genre + max_length_year_publishing + max_length_in_stock + max_length_purchasing;
-    horizontal_length += 22;
+    horizontal_length += 8;
     std::wstring horizontal_line = L"";
     for (i = 0; i < horizontal_length; ++i)
         horizontal_line += L"-";
-    std::wstring vertical_line = L" | ";
+    std::wstring vertical_line = L"|";
     clear();
-    std::wcout << L"  " << horizontal_line << std::endl;
+    std::wcout << horizontal_line << std::endl;
     for (i = 0; i < len; ++i)
     {
-        std::wcout << L" " << vertical_line << structures[i].id << vertical_line
-                  << structures[i].title << vertical_line
-                  << structures[i].studio << vertical_line
-                  << structures[i].genre << vertical_line
-                  << structures[i].year_publishing << vertical_line
-                  << structures[i].in_stock << vertical_line
-                  << structures[i].year_purchasing << vertical_line << std::endl;
-        std::wcout << L"  " << horizontal_line << std::endl;
+        std::wcout << std::setw(0) << vertical_line << std::setw(max_length_id) << structures[i].id << std::setw(0) << vertical_line
+                   << std::setw(max_length_title) << structures[i].title << std::setw(0) << vertical_line
+                   << std::setw(max_length_studio) << structures[i].studio << std::setw(0) << vertical_line
+                   << std::setw(max_length_genre) << structures[i].genre << std::setw(0) << vertical_line
+                   << std::setw(max_length_year_publishing) << structures[i].year_publishing << std::setw(0) << vertical_line
+                   << std::setw(max_length_in_stock) << structures[i].in_stock << std::setw(0) << vertical_line
+                   << std::setw(max_length_purchasing) << structures[i].year_purchasing << std::setw(0) << vertical_line << std::endl;
+
     }
+    std::wcout << horizontal_line << std::endl;
     wait();
 }
 

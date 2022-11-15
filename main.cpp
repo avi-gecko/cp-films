@@ -15,9 +15,10 @@ int main()
                                 , L"2. Экспортировать в файл"
                                 , L"3. О программе"
                                 , L"4. Выход"};
-    const int FILE_SIZE = 1;
+    const int FILE_SIZE = 2;
     const int MENU_SIZE = 4;
     const std::string FILE_NAME= "films.db";
+
     Films *films = nullptr;
     while (true)
     {
