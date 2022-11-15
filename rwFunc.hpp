@@ -14,6 +14,6 @@ typedef struct Tfilms
 } Films;
 
 Films *make_struct(const std::string file, int size);
-
+void export_struct(const Films structures[], int len);
 
 #endif // RWFUNC_HPP

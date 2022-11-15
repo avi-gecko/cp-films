@@ -6,7 +6,11 @@
 
 int main()
 {
+    #ifdef _WIN32
+    setlocale(LC_ALL, "cp1251");
+    #elif __linux__
     setlocale(LC_ALL, "ru_RU.utf8");
+    #endif
     std::wstring menu_items[4] = {L"1. Открыть файл"
                                 , L"2. Экспортировать в файл"
                                 , L"3. О программе"
@@ -35,7 +39,11 @@ int main()
 
             case 2:
             {
-
+                if (!films)
+                    films = make_struct(FILE_NAME, FILE_SIZE);
+                export_struct(films, FILE_SIZE);
+                delete[] films;
+                break;
             }
 
             case 3:

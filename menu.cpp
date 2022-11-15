@@ -4,24 +4,24 @@
 #include <limits>
 
 #ifdef _WIN32
-void clear()
+inline void clear()
 {
     system("cls");
 }
 
-void wait()
+inline void wait()
 {
     system("pause");
 }
 
 #elif __linux__
 
-void clear()
+inline void clear()
 {
     system("clear");
 }
 
-void wait()
+inline void wait()
 {
     std::wcout << L"Нажмите любую клавишу для продолжения..." << std::endl;
     system("read -s -N 1");
@@ -81,6 +81,7 @@ void show_file(const Films structures[], int len)
                   << structures[i].year_publishing << vertical_line
                   << structures[i].in_stock << vertical_line
                   << structures[i].year_purchasing << vertical_line << std::endl;
+        std::wcout << L"  " << horizontal_line << std::endl;
     }
     wait();
 }

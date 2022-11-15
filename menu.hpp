@@ -4,7 +4,7 @@
 #include "rwFunc.hpp"
 
 void show_menu(const std::wstring items[], int len);
-void show_file(const Films structure[], int len);
+void show_file(const Films structures[], int len);
 void wait();
 void clear();
 void about();
