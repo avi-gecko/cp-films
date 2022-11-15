@@ -1,7 +1,7 @@
 #include <iostream>
 #include "menu.hpp"
 
-void menu(int len, std::string items)
+void show_menu(int len, const std::string items[])
 {
    for(int i = 0; i < len; ++i)
    {
