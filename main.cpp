@@ -35,6 +35,11 @@ int main()
                 about();
                 break;
             }
+
+            case 4:
+            {
+                exit(0);
+            }
         }
     }
 
