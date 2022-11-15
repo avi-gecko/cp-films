@@ -5,11 +5,11 @@
 typedef struct Tfilms
 {
     int id;
-    std::string title;
-    std::string studio;
-    std::string  genre;
+    std::wstring title;
+    std::wstring studio;
+    std::wstring  genre;
     int year_publishing;
-    bool inStock;
+    bool in_stock;
     int year_purchasing;
 } Films;
 
