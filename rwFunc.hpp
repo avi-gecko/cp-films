@@ -13,4 +13,7 @@ typedef struct Tfilms
     int year_purchasing;
 } Films;
 
+Films *make_struct(const std::string file, int size);
+
+
 #endif // RWFUNC_HPP
