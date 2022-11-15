@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-        menu.cpp
+        menu.cpp \
+        rwFunc.cpp
 
 HEADERS += \
-    menu.hpp
+    menu.hpp \
+    rwFunc.hpp
